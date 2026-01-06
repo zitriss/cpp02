@@ -1,6 +1,6 @@
 # == Makefile ==
 
-NAME = fixed1
+NAME = fixed2
 CPP = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -I$(INC_DIR)
 
