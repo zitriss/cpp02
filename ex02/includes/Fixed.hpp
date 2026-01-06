@@ -6,7 +6,7 @@
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 14:37:49 by tlize             #+#    #+#             */
-/*   Updated: 2026/01/06 09:32:38 by tlize            ###   ########.fr       */
+/*   Updated: 2026/01/06 11:05:02 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,33 @@ public:
 	Fixed(const Fixed &old_fixed);
 	Fixed(const int value);
 	Fixed(const float value);
-	Fixed &operator=(const Fixed &old_fixed);
 	~Fixed();
-	int		getRawBits(void) const;
-	void	setRawBits(int const raw);
+	
 	float	toFloat(void)	const;
 	int		toInt(void)		const;
+	
+	int		getRawBits(void) const;
+	void	setRawBits(int const raw);
+	
+	Fixed &operator=(const Fixed &old_fixed);
+
+	bool operator>(Fixed fixed) const;
+	bool operator<(Fixed fixed) const;
+	bool operator>=(Fixed fixed) const;
+	bool operator<=(Fixed fixed) const;
+	bool operator==(Fixed fixed) const;
+	bool operator!=(Fixed fixed) const;
+	
+	float operator+(Fixed fixed) const;
+	float operator-(Fixed fixed) const;
+	float operator*(Fixed fixed) const;
+	float operator/(Fixed fixed) const;
+
+	Fixed operator++();
+	Fixed operator++(int);
+	Fixed operator--();
+	Fixed operator--(int);
+	
 private:
 	int					fixed_point_number_value;
 	static const int	fractional_bits = 8;
