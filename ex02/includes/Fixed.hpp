@@ -6,7 +6,7 @@
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 14:37:49 by tlize             #+#    #+#             */
-/*   Updated: 2026/01/06 11:05:02 by tlize            ###   ########.fr       */
+/*   Updated: 2026/01/06 15:43:52 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,10 @@ public:
 	
 	float	toFloat(void)	const;
 	int		toInt(void)		const;
+	static	Fixed &min(Fixed &fixed1, Fixed &fixed2);
+	static	const Fixed &min(const Fixed &fixed1, const Fixed &fixed2);
+	static	Fixed &max(Fixed &fixed1, Fixed &fixed2);
+	static	const Fixed &max(const Fixed &fixed1, const Fixed &fixed2);
 	
 	int		getRawBits(void) const;
 	void	setRawBits(int const raw);
